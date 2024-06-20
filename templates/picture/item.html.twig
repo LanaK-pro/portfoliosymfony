@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-4xl text-center">{{ picture.title }}</h1>
+    <p>{{ picture.description }}</p>
+    <p>{{ picture.software }}</p>
+    <img src="{{ picture.url }}">
+{% endblock %}
+

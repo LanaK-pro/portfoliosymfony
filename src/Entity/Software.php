@@ -15,6 +15,11 @@ class Software
     #[ORM\Column]
     private ?int $id = null;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 

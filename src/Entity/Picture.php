@@ -19,8 +19,8 @@ class Picture
     #[Vich\UploadableField(mapping: 'pictures', fileNameProperty: 'url')]
     private ?File $imageFile = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $updatedAt = null;
+    //#[ORM\Column(nullable: true)]
+    //private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
