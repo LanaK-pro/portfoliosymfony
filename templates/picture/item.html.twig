@@ -1,9 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="text-4xl text-center">{{ picture.title }}</h1>
-    <p>{{ picture.description }}</p>
-    <p>{{ picture.software }}</p>
-    <img src="{{ picture.url }}">
+    <h1 class="tracking-widest text-4xl text-gray-500 dark:text-gray-400 m-3">{{ picture.title }}</h1>
+
+    <a href="{{ path('picture_list') }}">
+        <div class="my-8 mx-5">
+        <kbd class="rtl:rotate-180 inline-flex items-center px-2 py-1.5 text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">
+        <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 10 16">
+            <path d="M8.766.566A2 2 0 0 0 6.586 1L1 6.586a2 2 0 0 0 0 2.828L6.586 15A2 2 0 0 0 10 13.586V2.414A2 2 0 0 0 8.766.566Z"/>
+        </svg>
+        <span class="sr-only">Arrow key left</span>
+    </kbd>
+        </div>
+    </a>
+
+    {# Image generée dynamiquement via le nom de l'url dans la bdd qui va chercher l'image correspondante dans le dossier images#}
+    <div class="p-4 max-w-md">
+        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="h-48 w-full object-cover object-center" src="{{ asset('/images/' ~ picture.url) }}" alt="blog">
+            <div class="p-6">
+                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{{ picture.software }}</h2>
+                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ picture.title }}</h1>
+                <p class="leading-relaxed mb-3">
+                    {{ picture.description }}
+                </p>
+                <div class="flex items-center flex-wrap">
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
