@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="tracking-widest text-4xl text-gray-500 dark:text-gray-400 m-3">{{ picture.title }}</h1>
+    <h1 class="tracking-widest text-4xl text-lana m-3">{{ picture.title }}</h1>
 
     <a href="{{ path('picture_list') }}">
         <div class="my-8 mx-5">
@@ -15,12 +15,12 @@
     </a>
 
     {# Image generée dynamiquement via le nom de l'url dans la bdd qui va chercher l'image correspondante dans le dossier images#}
-    <div class="p-4 max-w-md">
-        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-            <img class="h-48 w-full object-cover object-center" src="{{ asset('/images/' ~ picture.url) }}" alt="blog">
+    <div class="flex items-center justify-center h-screen">
+        <div class="border border-gray-300 rounded p-3">
+            <img class="max-w-md w-full h-auto object-contain px-4" src="{{ asset('/images/' ~ picture.url) }}" alt="blog">
             <div class="p-6">
                 <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{{ picture.software }}</h2>
-                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ picture.title }}</h1>
+                <h1 class="title-font text-lg font-medium text-lana mb-3">{{ picture.title }}</h1>
                 <p class="leading-relaxed mb-3">
                     {{ picture.description }}
                 </p>

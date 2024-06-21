@@ -32,7 +32,7 @@ class PictureCrudController extends AbstractCrudController
             ImageField::new('url')->setBasePath('images/')
                                                 ->setUploadDir('public/images/')
                                                 ->setFileConstraints([new Image([
-                                                    'maxSize' => '1500k',
+                                                    'maxSize' => '5000k',
                                                     'mimeTypes' => [
                                                         'image/jpeg',
                                                         'image/png',
