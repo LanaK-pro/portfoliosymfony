@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    {{ picture.title }}
+{% endblock %}
+
 {% block body %}
     <h1 class="tracking-widest text-4xl text-lana m-3">{{ picture.title }}</h1>
 
